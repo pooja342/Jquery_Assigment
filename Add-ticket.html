@@ -12,6 +12,12 @@
             display: flex;
             gap: 20px;
          }
+         #result{
+            margin-top:20px;
+         }
+        #show{
+          margin-bottom:10px;
+         }
          
     </style>
     <script>
@@ -22,17 +28,34 @@
             if(myLength > 0)
             {
                 var data = $("#value").val();
-                $("tbody").append('<tr><td> '+ i++ +' </td><td> Ticket Name :'+data+'</td><td><button type="button"" id="btnDelete" class="btn btn-danger">Delete</button></td></tr>');
+                $("tbody").append('<tr><td> '+ i++ +' </td><td>'+data+'</td><td><button type="button"" id="btnDelete" class="btn btn-danger">Delete</button></td></tr>');
                 $("#tbUser").on('click','#btnDelete',function(){
                 $(this).closest('tr').remove();
                 });   
             } 
            });
-           $("#submit").click(function(){
-             alert("yess");
-           });
 
+         $("#get").click(function(){
+             var arrData=[];
+             var index = 0;
+             alert("yess its wirkk!!");
+             $('#tbUser tr').each(function() {
+                if ($(this).find("td:first").length > 0) {
+                var ticketname = $(this).find("td:eq(1)").text();
+                arrData.push(ticketname);
+                }
+            });
+            $("#result").html('<button type="button" id ="show" class="btn btn-info"> show the lists</button>');
+            $("#show").click(function(){
+                $.each(arrData, function(index, value){
+                $("#result").append('<ol class="list-group list-group"><li class="list-group-item">'+ ++index +'  :' + value +'</li></ol>');
+                });
+            });
+            // alert(arrData);
+            // console.log(arrData);
          });
+
+        });
     </script>
     <body>
        <div style="width:1000px;  margin:200px 0px 0px 400px;">
@@ -52,7 +75,9 @@
             <input type="text" class="form-control" id="value" placeholder="Enter Ticket Name">
             <button type="button" class="btn btn-success d-inline-block" id ="Add">Add Ticket</button>
           </form>
-          <button type="button" class="btn btn-success d-inline-block" id ="#submit">submit</button>
+          <button type="button" class="btn btn-dark" id ="get">submit</button>
+          <div id="result">
+          </div>
        </div>
     </body>
 </html>
