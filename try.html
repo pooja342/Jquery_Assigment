@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title> Multiple_color</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+    <style>
+        .red-toggle{
+            background: #D31C1C;
+        }
+        .blue-toggle{
+            background: #365D97;
+        }
+        .Green-toggle{
+            background: #36976C;
+        }
+        .yellow-toggle{
+            background: #D7DD1C;
+        }
+        .orange-toggle{
+            background:  #EF630E;
+        }
+        .purple-toggle{
+            background-color: #9A0EEF;
+        }
+    </style>
+    <script>
+        
+         $(document).ready(function(){
+            var index;
+            $('.red').click(function(){
+                $(this).toggleClass("red-toggle");
+            });
+            $('.blue').click(function(){
+                $(this).toggleClass("blue-toggle");
+            });
+            $('.green').click(function(){
+                $(this).toggleClass("Green-toggle");
+            });
+            $('.yellow').click(function(){
+                $(this).toggleClass("yellow-toggle");
+            });
+            $('.orange').click(function(){
+                $(this).toggleClass("orange-toggle");
+            });
+            $('.purple').click(function(){
+                $(this).toggleClass("purple-toggle");
+            });
+            $("button").click(function(){
+                $('.inner div').each(function () {
+                    if ($(this).text() == 'This is 5th text') 
+                    { 
+                      alert("yesss");
+                    }
+                    else
+                    {
+                      alert("Sdsad");
+                    }
+                });
+            });
+
+         });
+    </script>
+    <body><html>
+        <head>
+            <title> Multiple_color</title>
+            <link rel="stylesheet" href="style.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        </head>
+        <style>
+            .red-toggle{
+                background: #D31C1C;
+            }
+            .blue-toggle{
+                background: #365D97;
+            }
+            .Green-toggle{
+                background: #36976C;
+            }
+            .yellow-toggle{
+                background: #c4c934;
+            }
+            .orange-toggle{
+                background:  #EF630E;
+            }
+            .purple-toggle{
+                background: #9A0EEF;
+            }
+        </style>
+        <script>
+            
+             $(document).ready(function(){
+                var index;
+                $('.red').click(function(){
+                    $(this).toggleClass("red-toggle");
+                    if($(this).css("background-color")=="#D31C1C")
+                    {
+                      alert("yess");
+                    } 
+                });
+                $('.blue').click(function(){
+                    $(this).toggleClass("blue-toggle");
+                    if($(this).css("background-color")=="#FFFFFF")
+                    {
+                        index++;
+                    } 
+                });
+                $('.green').click(function(){
+                    $(this).toggleClass("Green-toggle");
+                });
+                $('.yellow').click(function(){
+                    $(this).toggleClass("yellow-toggle");
+                });
+                $('.orange').click(function(){
+                    $(this).toggleClass("orange-toggle");
+                });
+                $('.purple').click(function(){
+                    $(this).toggleClass("purple-toggle");
+                });
+                $("button").click(function(){
+                 alert(index);
+                });
+    
+             });
+        </script>
+        <body>
+            <div id="main">
+                <h1>Select Multiple-color</h1>
+                <div class="inner">
+                    <div class="red"><h4>Red</h4></div>
+                    <div class="blue"><h4>Blue</h4></div>
+                    <div class="green"><h4>Green</h4></div>
+                    <div class="yellow"><h4>yellow</h4></div>
+                    <div class="orange"><h4>orange</h4></div>
+                    <div class="purple"><h4>purple</h4></div>
+                </div>
+                <button>index</button>
+            </div>
+        </body>
+    </html>
+        <div id="main">
+            <h1>Select Multiple-color</h1>
+            <div class="inner">
+                <div class="red"><h4>Red</h4></div>
+                <div class="blue"><h4>Blue</h4></div>
+                <div class="green"><h4>Green</h4></div>
+                <div class="yellow"><h4>yellow</h4></div>
+                <div class="orange"><h4>orange</h4></div>
+                <div class="purple"><h4>purple</h4></div>
+            </div>
+            <button>index</button>
+        </div>
+    </body>
+</html>

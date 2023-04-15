@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title> Multiple_color</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        
+    </head>
+    <style>
+        .red-toggle{
+            background: #D31C1C;
+        }
+        .blue-toggle{
+            background: #365D97;
+        }
+        .Green-toggle{
+            background: #36976C;
+        }
+        .yellow-toggle{
+            background: #D7DD1C;
+        }
+        .orange-toggle{
+            background:  #EF630E;
+        }
+        .purple-toggle{
+            background: #9A0EEF;
+        }
+    </style>
+    <script>
+        
+         $(document).ready(function(){
+            var arrData= [];
+            var red=0;
+            var blue=0;
+            var green=0;
+            var purple=0;
+            var orange=0;
+            // var blue=0;
+            var colorname ;
+            $('.red').click(function(){
+                if(red==0)
+                {
+                    $(this).addClass('red-toggle');
+                    red =1;
+                    arrData.push("red");
+                }
+                else
+                {
+                    $(this).removeClass('red-toggle');
+                    red = 0;
+                    const index = $.inArray("red", arrData);
+                    arrData.splice($.inArray("red", arrData), 1);
+                }
+            });
+            $('.blue').click(function(){
+                if(blue==0)
+                {
+                    $(this).addClass('blue-toggle');
+                    blue =1;
+                    arrData.push("blue");
+                }
+                else
+                {
+                    $(this).removeClass('blue-toggle');
+                    blue = 0;
+                    arrData.splice($.inArray("blue", arrData), 1);
+                }
+            });
+            $('.green').click(function(){
+                if(green==0)
+                {
+                    $(this).addClass('green-toggle');
+                    green =1;
+                    arrData.push("green");
+                }
+                else
+                {
+                    $(this).removeClass('green-toggle');
+                    green = 0;
+                    arrData.splice($.inArray("green", arrData), 1);
+                }
+            });
+            $('.purple').click(function(){
+                if(purple==0)
+                {
+                    $(this).addClass('purple-toggle');
+                    purple =1;
+                    arrData.push("purple");
+                }
+                else
+                {
+                    $(this).removeClass('purple-toggle');
+                    purple = 0;
+                    arrData.splice($.inArray("purple", arrData), 1);
+                }
+            });
+            $('.orange').click(function(){
+                if(orange==0)
+                {
+                    $(this).addClass('orange-toggle');
+                    orange =1;
+                    arrData.push("orange");
+                }
+                else
+                {
+                    $(this).removeClass('orange-toggle');
+                    orange= 0;
+                    arrData.splice($.inArray("orange", arrData), 1);
+                }
+            });
+          
+            $("button").click(function(){
+               console.log(arrData);
+            });
+         });
+    </script>
+    <body>
+        <div id="main">
+            <h1>Select Multiple-color</h1>
+            <div class="inner">
+                <div class="red"><h4>Red</h4></div>
+                <div class="blue"><h4>Blue</h4></div>
+                <div class="green"><h4>Green</h4></div>
+                <div class="purple"><h4>purple</h4></div>
+                <div class="orange"><h4>orange</h4></div>
+            </div>
+            <button type="button" class="btn btn-success" style=" margin-top:50px; width:100px; height:50px;">GET DATA</button>
+        </div>
+    </body>
+</html>
